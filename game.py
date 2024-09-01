@@ -5,7 +5,8 @@ from collections import namedtuple
 import numpy as np
 
 pygame.init()
-font = pygame.font.Font("arial.ttf", 25)
+font = pygame.font.SysFont('arial', 25)  # This method is preferred over specifying a file path
+
 # font = pygame.font.SysFont('arial', 25)
 
 
@@ -157,7 +158,7 @@ class SnakeGameAI:
         self.frame_iteration += 1
         # 1. collect user input
         for event in pygame.event.get():
-            # print(pygame.event.event_name(event.type))
+            print(pygame.event.event_name(event.type))
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
